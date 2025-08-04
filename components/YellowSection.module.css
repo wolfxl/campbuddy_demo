@@ -1,0 +1,185 @@
+.yellowSection {
+  background-color: var(--color-yellow-section);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.topWave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 3;
+}
+
+.topWave svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 120px;
+}
+
+.bottomWave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 3;
+}
+
+.bottomWave svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 120px;
+  transform: translateY(1px); /* Ensure proper connection with next section */
+}
+
+.glowEffect {
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+  filter: blur(30px);
+  opacity: 0.4;
+  animation: pulse 8s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.3) 2px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 30px 30px, 50px 50px;
+  animation: particleMove 60s linear infinite;
+  z-index: 1;
+}
+
+@keyframes particleMove {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px, 1000px 1000px;
+  }
+}
+
+.sectionContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--color-text-primary);
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.highlightCard {
+  background-color: var(--color-surface);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.highlightCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.highlightIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.highlightCard h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-accent-1);
+}
+
+.highlightCard p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .yellowSection {
+    padding: 4rem 0;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .topWave, .bottomWave, .topWave svg, .bottomWave svg {
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  
+  .highlightsGrid {
+    grid-template-columns: 1fr;
+  }
+}

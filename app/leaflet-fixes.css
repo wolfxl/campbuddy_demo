@@ -1,0 +1,32 @@
+/**
+ * This file provides global CSS overrides for the Leaflet map
+ * It ensures the Leaflet CSS works correctly with Next.js
+ */
+
+/* Ensure the leaflet container takes full height/width of its parent */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Fix popup positioning */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-content {
+  margin: 13px 19px;
+  line-height: 1.4;
+}
+
+/* Ensure controls are visible */
+.leaflet-control-container .leaflet-top,
+.leaflet-control-container .leaflet-bottom {
+  z-index: 990;
+}
+
+/* Prevent Leaflet from setting position absolute on its containers */
+.leaflet-container {
+  z-index: 1;
+}

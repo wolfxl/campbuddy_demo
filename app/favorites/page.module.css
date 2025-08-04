@@ -1,0 +1,430 @@
+.favoritesPage {
+  padding-bottom: 4rem;
+}
+
+/* Favorites Content */
+.favoritesContent {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Tabs */
+.tabsContainer {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.tabs {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.tabButton {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #6c757d;
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.tabButton.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Tab Content */
+.tabContent {
+  padding: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Section Header */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.viewOptions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.viewButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #e9ecef;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.viewButton.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Camps Grid */
+.campsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.campCard {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.campCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.campImageContainer {
+  position: relative;
+  height: 180px;
+  background-color: var(--color-light-gray);
+}
+
+.campImage {
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/camp-placeholder.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.favoriteButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  color: #ff6b6b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.favoriteButton:hover {
+  transform: scale(1.1);
+}
+
+.campCategory {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.campInfo {
+  padding: 1.25rem;
+}
+
+.campName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--color-primary);
+}
+
+.campOrg {
+  font-size: 0.9rem;
+  color: var(--color-dark-gray);
+  margin-bottom: 1rem;
+}
+
+.campDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.campDetail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-dark-gray);
+}
+
+.campDescription {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  color: var(--color-dark-gray);
+}
+
+.campActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.campDetailsButton,
+.campRegisterButton {
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.campDetailsButton {
+  background-color: white;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.campDetailsButton:hover {
+  background-color: #f8f9fa;
+}
+
+.campRegisterButton {
+  background-color: var(--color-primary);
+  border: none;
+  color: white;
+}
+
+.campRegisterButton:hover {
+  background-color: var(--color-secondary);
+}
+
+/* Plans Grid */
+.plansGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.planCard {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.planCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.planHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.planTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.planActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.planActionButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f3f5;
+  border: none;
+  border-radius: 4px;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.planActionButton:hover {
+  background-color: #e9ecef;
+}
+
+.planDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.planDetail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.planButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.viewPlanButton,
+.editPlanButton {
+  padding: 0.75rem;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.viewPlanButton {
+  background-color: var(--color-primary);
+  border: none;
+  color: white;
+}
+
+.viewPlanButton:hover {
+  background-color: var(--color-secondary);
+}
+
+.editPlanButton {
+  background-color: white;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.editPlanButton:hover {
+  background-color: #f8f9fa;
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.emptyIcon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  color: #ced4da;
+  margin-bottom: 1.5rem;
+}
+
+.emptyTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #495057;
+}
+
+.emptyDescription {
+  font-size: 1rem;
+  color: #6c757d;
+  max-width: 400px;
+  margin-bottom: 1.5rem;
+}
+
+.emptyButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.emptyButton:hover {
+  background-color: var(--color-secondary);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .campsGrid,
+  .plansGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .viewOptions {
+    width: 100%;
+  }
+  
+  .campsGrid,
+  .plansGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tabsContainer {
+    padding: 1rem;
+  }
+  
+  .tabContent {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .campDetails {
+    grid-template-columns: 1fr;
+  }
+  
+  .campActions {
+    flex-direction: column;
+  }
+  
+  .planButtons {
+    grid-template-columns: 1fr;
+  }
+}

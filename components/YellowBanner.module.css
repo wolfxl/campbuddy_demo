@@ -1,0 +1,154 @@
+.yellowBanner {
+  background-color: var(--color-yellow-section);
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 2; /* Higher than surrounding sections */
+}
+
+/* Remove the .topWave related styles since we don't need them */
+
+.bottomWave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 3; /* Higher than other elements */
+}
+
+.bottomWave svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 120px;
+  transform: translateY(1px); /* Ensure proper connection with next section */
+}
+
+.glowEffect {
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+  filter: blur(30px);
+  opacity: 0.4;
+  animation: pulse 8s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.3) 2px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 30px 30px, 50px 50px;
+  animation: particleMove 60s linear infinite;
+  z-index: 1;
+}
+
+@keyframes particleMove {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px, 1000px 1000px;
+  }
+}
+
+.bannerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.textContent {
+  flex: 2;
+}
+
+.bannerTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.bannerTitle::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+.bannerDescription {
+  font-size: 1.2rem;
+  max-width: 600px;
+  color: var(--color-primary);
+}
+
+.bannerCta {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .yellowBanner {
+    padding: 6rem 0;
+  }
+  
+  .bannerContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .bannerTitle {
+    font-size: 2.5rem;
+  }
+  
+  .bannerTitle::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .bannerCta {
+    justify-content: center;
+  }
+  
+  .topWave, .bottomWave, .topWave svg, .bottomWave svg {
+    height: 50px;
+  }
+}

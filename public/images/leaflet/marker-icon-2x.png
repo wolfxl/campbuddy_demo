@@ -1,0 +1,3 @@
+// This is the base64 encoding of the Leaflet marker icon (2x)
+// We save this as a file to be served by Next.js
+// Original source: https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png

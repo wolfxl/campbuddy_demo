@@ -1,0 +1,28 @@
+.card {
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 2;
+  transform: translateZ(30px);
+  backface-visibility: hidden;
+}
+
+.cardShadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: transparent;
+  z-index: 1;
+  transform: translateZ(0);
+}
+
+.card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}

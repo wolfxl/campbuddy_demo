@@ -1,0 +1,175 @@
+.pinkSection {
+  background-color: var(--color-pink-section);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.topWave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 3;
+}
+
+.topWave svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 120px;
+}
+
+.bottomWave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 3;
+}
+
+.bottomWave svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 120px;
+  transform: translateY(1px); /* Ensure proper connection with next section */
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.3) 2px, transparent 2px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 30px 30px, 50px 50px;
+  animation: particleMove 60s linear infinite;
+  z-index: 1;
+}
+
+@keyframes particleMove {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px, 1000px 1000px;
+  }
+}
+
+.sectionContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.sectionDescription {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: var(--color-text-secondary);
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonialCard {
+  background-color: var(--color-surface);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.quoteIcon {
+  color: var(--color-accent-1);
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.quote {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+  flex: 1;
+  font-style: italic;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.authorName {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--color-accent-1);
+}
+
+.authorPosition {
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+}
+
+@media (max-width: 768px) {
+  .pinkSection {
+    padding: 4rem 0;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionDescription {
+    font-size: 1rem;
+  }
+  
+  .topWave, .bottomWave, .topWave svg, .bottomWave svg {
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+  
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+}
