@@ -1,0 +1,25 @@
+/* Copy the results styles here - will need to be extracted from the main results page.module.css */
+/* This file should contain all the CSS classes used by the results components */
+
+/* Placeholder for now - in implementation, you would move all relevant styles here */
+.resultsPage {
+  /* Results page styles */
+}
+
+.pageHeader {
+  /* Page header styles */
+}
+
+.calendarGrid {
+  /* Calendar grid styles */
+}
+
+.campCard {
+  /* Camp card styles */
+}
+
+.summaryTable {
+  /* Summary table styles */
+}
+
+/* Add all other relevant CSS classes from the original page.module.css */

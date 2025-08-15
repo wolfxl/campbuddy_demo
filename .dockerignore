@@ -1,0 +1,53 @@
+# Git files
+.git
+.gitignore
+
+# Node modules
+node_modules
+
+# Next.js build outputs (will be generated inside the container)
+.next
+# However, if you are using a specific output folder for `next build` (e.g., `out` for static export),
+# you might list that here if you don't want it copied in the initial COPY . .
+# For most Docker builds that do `npm run build` inside, .next is fine to list here.
+
+# Local environment variables
+.env*.local
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Test files (if you don't want them in the image)
+# coverage
+# jest.config.js
+# __tests__
+
+# Docker files (if they are in the context but not needed inside)
+# Dockerfile
+# .dockerignore
+
+# Other
+README.md 

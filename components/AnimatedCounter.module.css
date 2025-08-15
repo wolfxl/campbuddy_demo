@@ -1,0 +1,10 @@
+.counter {
+  display: inline-block;
+}
+
+.value {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.2;
+  color: var(--color-primary);
+}

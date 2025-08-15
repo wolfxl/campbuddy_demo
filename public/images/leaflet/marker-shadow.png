@@ -1,0 +1,3 @@
+// This is the base64 encoding of the Leaflet marker shadow
+// We save this as a file to be served by Next.js
+// Original source: https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png

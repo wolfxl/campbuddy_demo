@@ -1,0 +1,55 @@
+.pinkCurveSection {
+  background-color: var(--color-pink-section);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  min-height: 120px; /* Minimal height to just show the curves */
+}
+
+.topWave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 3;
+}
+
+.topWave svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 120px;
+}
+
+.bottomWave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 3;
+}
+
+.bottomWave svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 120px;
+  transform: translateY(1px); /* Ensure proper connection with next section */
+}
+
+@media (max-width: 768px) {
+  .pinkCurveSection {
+    padding: 4rem 0;
+  }
+  
+  .topWave, .bottomWave, .topWave svg, .bottomWave svg {
+    height: 60px;
+  }
+}

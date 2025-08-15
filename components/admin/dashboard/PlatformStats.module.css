@@ -1,0 +1,173 @@
+.platformStats {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.statsSection {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.healthSection {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 20px 0;
+}
+
+.statGroup {
+  margin-bottom: 24px;
+}
+
+.statGroup:last-child {
+  margin-bottom: 0;
+}
+
+.statTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 12px 0;
+}
+
+.statItems {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 140px;
+}
+
+.statName {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.statCount {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.statBar {
+  flex: 1;
+  height: 8px;
+  background-color: #f3f4f6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.statProgress {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.statPercentage {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 600;
+  min-width: 35px;
+  text-align: right;
+}
+
+.healthItems {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.healthItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.healthItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.healthInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.healthMetric {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.healthValue {
+  font-size: 16px;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.healthStatus {
+  font-size: 20px;
+}
+
+.healthStatus.good {
+  color: #10b981;
+}
+
+.healthStatus.excellent {
+  color: #10b981;
+}
+
+@media (max-width: 640px) {
+  .statInfo {
+    min-width: 120px;
+  }
+  
+  .statName {
+    font-size: 13px;
+  }
+  
+  .statCount {
+    font-size: 13px;
+  }
+  
+  .statPercentage {
+    font-size: 11px;
+    min-width: 30px;
+  }
+  
+  .healthMetric {
+    font-size: 13px;
+  }
+  
+  .healthValue {
+    font-size: 15px;
+  }
+}

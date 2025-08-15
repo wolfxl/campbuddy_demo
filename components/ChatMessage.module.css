@@ -1,0 +1,117 @@
+.cursor {
+  display: inline-block;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+  font-weight: normal;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}.messageContainer {
+  display: flex;
+  margin-bottom: 1rem;
+  animation: slideInMessage 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.userMessage {
+  justify-content: flex-end;
+}
+
+.botMessage {
+  justify-content: flex-start;
+}
+
+.messageBubble {
+  max-width: 70%;
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  position: relative;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.userMessage .messageBubble {
+  background: linear-gradient(135deg, var(--color-primary), #4F9BFF);
+  color: white;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 4px 20px rgba(58, 134, 255, 0.25);
+}
+
+.botMessage .messageBubble {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-primary);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom-left-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.messageText {
+  margin: 0;
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+.cardMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cardMessage .messageText {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.timestamp {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.userMessage .timestamp {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.botMessage .timestamp {
+  color: var(--color-text-tertiary);
+}
+
+@keyframes slideInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.messageBubble:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+.userMessage .messageBubble:hover {
+  box-shadow: 0 6px 25px rgba(58, 134, 255, 0.35);
+}
+
+@media (max-width: 768px) {
+  .messageBubble {
+    max-width: 85%;
+  }
+  
+  .cardBubble {
+    max-width: 95%;
+    padding: 0.5rem;
+  }
+}

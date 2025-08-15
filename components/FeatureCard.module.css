@@ -1,0 +1,59 @@
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  background-color: white;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--color-secondary), var(--color-accent));
+  transition: width 0.3s ease;
+}
+
+.featureCard:hover::before {
+  width: 8px;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.featureCard:hover .iconContainer {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.featureCard:hover .title {
+  color: var(--color-secondary);
+}
+
+.description {
+  color: var(--color-dark-gray);
+  line-height: 1.6;
+  margin-bottom: 0;
+}

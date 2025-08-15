@@ -1,0 +1,35 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="200" fill="#e6f7ff"/>
+  
+  <!-- Sun -->
+  <circle cx="320" cy="50" r="30" fill="#FFD700"/>
+  <circle cx="320" cy="50" r="40" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Mountains -->
+  <polygon points="0,200 120,80 180,130 250,60 320,110 400,30 400,200" fill="#4CAF50"/>
+  <polygon points="0,200 80,120 140,150 220,100 280,140 350,90 400,160 400,200" fill="#2E7D32"/>
+  
+  <!-- Tent -->
+  <polygon points="180,200 140,120 220,120 180,200" fill="#FFA000"/>
+  <polygon points="180,200 220,120 260,200" fill="#FF8F00"/>
+  <line x1="180" y1="120" x2="180" y2="200" stroke="#333" stroke-width="2"/>
+  <line x1="140" y1="120" x2="220" y2="120" stroke="#333" stroke-width="2"/>
+  
+  <!-- Campfire -->
+  <circle cx="300" cy="180" r="10" fill="#795548"/>
+  <polygon points="295,170 300,160 305,170 310,155 312,170 305,165 298,175" fill="#FF5722"/>
+  <polygon points="290,175 300,165 310,175 305,160 315,170 300,155 295,165" fill="#FF9800"/>
+  
+  <!-- Trees -->
+  <rect x="90" y="140" width="10" height="30" fill="#795548"/>
+  <polygon points="95,110 75,140 115,140" fill="#2E7D32"/>
+  <polygon points="95,90 80,115 110,115" fill="#388E3C"/>
+  
+  <rect x="340" y="160" width="8" height="20" fill="#795548"/>
+  <polygon points="344,130 329,160 359,160" fill="#2E7D32"/>
+  <polygon points="344,120 334,140 354,140" fill="#388E3C"/>
+  
+  <!-- Small text label -->
+  <text x="200" y="190" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Summer Camp</text>
+</svg>

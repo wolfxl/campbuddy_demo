@@ -1,0 +1,36 @@
+.adminLayout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f8fafc;
+}
+
+.adminContainer {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.adminMain {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.adminMain.sidebarClosed {
+  margin-left: 80px;
+}
+
+@media (max-width: 768px) {
+  .adminMain {
+    margin-left: 0;
+    padding: 16px;
+  }
+  
+  .adminMain.sidebarClosed {
+    margin-left: 0;
+  }
+}

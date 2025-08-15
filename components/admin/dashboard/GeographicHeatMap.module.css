@@ -1,0 +1,266 @@
+.heatMap {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 4px 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.loading {
+  text-align: center;
+  color: #6b7280;
+  padding: 40px;
+}
+
+.legend {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.areaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.mapContainer {
+  margin: 20px 0;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.mapTitle {
+  text-align: center;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.mapGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 80px);
+  gap: 4px;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.mapArea {
+  border-radius: 4px;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  padding: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mapArea:hover {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.areaLabel {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.areaDetails {
+  font-size: 9px;
+  opacity: 0.8;
+}
+
+/* Map positioning for Dallas area layout */
+.mapArea.allen {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.mapArea.mckinney {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.mapArea.frisco {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.mapArea.plano {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.mapArea.carrollton {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.mapArea.richardson {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.mapArea.garland {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.mapArea.irving {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.areaCard {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid;
+  transition: transform 0.2s ease;
+}
+
+.areaCard:hover {
+  transform: translateY(-2px);
+}
+
+.mapArea.low {
+  background-color: #ecfdf5;
+  border-color: #86efac;
+  color: #065f46;
+}
+
+.mapArea.medium {
+  background-color: #fef3c7;
+  border-color: #fbbf24;
+  color: #92400e;
+}
+
+.mapArea.high {
+  background-color: #fee2e2;
+  border-color: #f87171;
+  color: #991b1b;
+}
+
+.areaCard.low {
+  background-color: #ecfdf5;
+  border-color: #86efac;
+}
+
+.areaCard.medium {
+  background-color: #fef3c7;
+  border-color: #fbbf24;
+}
+
+.areaCard.high {
+  background-color: #fee2e2;
+  border-color: #f87171;
+}
+
+.legendColor.low {
+  background-color: #86efac;
+}
+
+.legendColor.medium {
+  background-color: #fbbf24;
+}
+
+.legendColor.high {
+  background-color: #f87171;
+}
+
+.areaName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+}
+
+.areaStats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.statValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+@media (max-width: 768px) {
+  .areaGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .legend {
+    justify-content: center;
+  }
+  
+  .mapGrid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 300px;
+  }
+}

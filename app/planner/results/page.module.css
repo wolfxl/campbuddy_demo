@@ -1,0 +1,750 @@
+.resultsPage {
+  padding-bottom: 4rem;
+}
+
+.pageHeader {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.pageDescription {
+  font-size: 1.1rem;
+  max-width: 700px;
+}
+
+.optimizationFocus {
+  display: inline-block;
+  margin-left: 1rem;
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.resultsContent {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Loading and Error states */
+.loadingContainer, .errorContainer {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  padding: 3rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.loadingSpinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid var(--color-primary);
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Results Header */
+.resultsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.childLegend {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.childLegendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.childColor {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.headerRight {
+  display: flex;
+  gap: 1rem;
+}
+
+.actionButton,
+.primaryButton,
+.secondaryButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButton {
+  background-color: #e9ecef;
+  border: none;
+}
+
+.actionButton:hover {
+  background-color: #dee2e6;
+}
+
+.primaryButton {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+}
+
+.primaryButton:hover {
+  background-color: var(--color-secondary);
+}
+
+.secondaryButton {
+  background-color: white;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.secondaryButton:hover {
+  background-color: #f8f9fa;
+}
+
+/* Calendar View */
+.calendarView {
+  padding: 2rem;
+}
+
+.calendarToolbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.viewOptions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.viewButton {
+  padding: 0.5rem 1rem;
+  background-color: #e9ecef;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.viewButton.active {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Schedule options */
+.scheduleOptions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.scheduleOptions label {
+  font-weight: 500;
+}
+
+.optionButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.optionButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.optionButton:hover {
+  background-color: #e9ecef;
+}
+
+.optionButton.activeOption {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.regenerateButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #e9ecef;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.regenerateButton:hover {
+  background-color: #dee2e6;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.weekRow {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.weekHeader {
+  background-color: #e9ecef;
+  padding: 0.75rem 1rem;
+}
+
+.weekName {
+  font-weight: 600;
+}
+
+.weekCamps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.campSlot {
+  min-height: 180px;
+}
+
+.campCard {
+  background-color: white;
+  border-radius: 8px;
+  border-top: 3px solid;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.campHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.campName {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.lockButton {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f3f5;
+  border: none;
+  border-radius: 4px;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lockButton.locked {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.campOrg {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 0.75rem;
+}
+
+/* Match score bar */
+.matchScoreContainer {
+  margin: 0.5rem 0 1rem;
+}
+
+.matchScoreBar {
+  height: 5px;
+  background-color: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+
+.matchProgressFill {
+  height: 100%;
+  background-color: var(--color-primary);
+}
+
+.matchScoreLabel {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+/* Match reasons */
+.matchReasons {
+  margin: 0.5rem 0;
+  position: relative;
+}
+
+.matchReasonsToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  cursor: pointer;
+  padding: 0;
+}
+
+.matchReasonsList {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  z-index: 100;
+}
+
+.matchReasons:hover .matchReasonsList {
+  display: block;
+}
+
+.matchReasonsList h5 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.matchReasonsList ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.8rem;
+}
+
+.matchReasonsList li {
+  margin-bottom: 0.25rem;
+}
+
+.campDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.campDetail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.campPrice {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.campActions {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.swapButton,
+.detailsButton,
+.registerButton {
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.swapButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f3f5;
+  border: none;
+  color: #6c757d;
+}
+
+.swapButton:hover {
+  background-color: #e9ecef;
+}
+
+.detailsButton {
+  background-color: white;
+  border: 1px solid #ced4da;
+}
+
+.detailsButton:hover {
+  background-color: #f8f9fa;
+}
+
+.registerButton {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+}
+
+.registerButton:hover {
+  background-color: var(--color-secondary);
+}
+
+.emptyCampSlot {
+  background-color: white;
+  border-radius: 8px;
+  border: 1px dashed #ced4da;
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptySlotContent {
+  text-align: center;
+}
+
+.emptySlotContent p {
+  color: #6c757d;
+  margin-bottom: 0.75rem;
+}
+
+.addCampButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #e9ecef;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.addCampButton:hover {
+  background-color: #dee2e6;
+}
+
+/* Match summary metrics */
+.matchSummaryMetrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.matchMetric h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.matchProgressBar {
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.matchProgressFill {
+  height: 100%;
+  background-color: var(--color-primary);
+}
+
+.matchMetric span {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+/* Map Section */
+.mapSection {
+  padding: 2rem;
+  border-top: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+}
+
+/* Custom map marker styles */
+.customHomeMarker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.homeMarkerIcon {
+  transition: transform 0.2s ease;
+}
+
+.homeMarkerIcon:hover {
+  transform: scale(1.1);
+}
+
+/* Summary Table */
+.summaryTable {
+  padding: 2rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.summaryTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+
+.summaryContent {
+  overflow-x: auto;
+}
+
+.campsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.campsTable th {
+  background-color: #f8f9fa;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.campsTable td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.childCell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.childColorDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.campCell {
+  display: flex;
+  flex-direction: column;
+}
+
+.campCell strong {
+  margin-bottom: 0.25rem;
+}
+
+.campCell span {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.statusPending {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: #fff3cd;
+  color: #856404;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.registerButtonSmall {
+  padding: 0.4rem 0.75rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.registerButtonSmall:hover {
+  background-color: var(--color-secondary);
+}
+
+.totalLabel {
+  font-weight: 600;
+  text-align: right;
+}
+
+.totalValue {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.campsTable tfoot tr {
+  background-color: #f8f9fa;
+}
+
+.campsTable tfoot td {
+  padding: 1rem;
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .resultsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .headerRight {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .weekCamps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendarToolbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .viewOptions {
+    width: 100%;
+  }
+  
+  .viewButton {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .regenerateButton {
+    width: 100%;
+  }
+  
+  .campActions {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .secondaryButton,
+  .primaryButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .pageHeader {
+    padding: 2rem 0;
+  }
+  
+  .pageTitle {
+    font-size: 2rem;
+  }
+  
+  .calendarView,
+  .summaryTable,
+  .resultsHeader,
+  .actionButtons {
+    padding: 1rem;
+  }
+  
+  .childLegend {
+    flex-wrap: wrap;
+  }
+  
+  .headerRight {
+    flex-wrap: wrap;
+  }
+  
+  .campsTable {
+    font-size: 0.85rem;
+  }
+}
